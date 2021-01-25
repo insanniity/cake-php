@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Password') ?></th>
-                    <td><?= h($user->password) ?></td>
+                    <td>****</td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>
