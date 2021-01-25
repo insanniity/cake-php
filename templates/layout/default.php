@@ -29,7 +29,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-    <?= $this->Html->css(['halfmoon-variables.min', 'normalize.min', 'milligram.min']) ?>
+    <?= $this->Html->css(['halfmoon-variables', 'all']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -38,22 +38,37 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-preferred-theme-onload="true">
     <div class="page-wrapper with-navbar with-sidebar with-navbar-fixed-bottom" data-sidebar-type="overlayed-sm-and-down">
         <div class="sticky-alerts"></div>
-        <nav class="navbar"></nav>
+        <nav class="navbar">
+            <div class="navbar-content">
+                <button class="btn btn-action" type="button" onclick="halfmoon.toggleSidebar()">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <div class="custom-switch">
+                    <input type="checkbox" id="switch-2" onclick="halfmoon.toggleDarkMode()"  checked>
+                    <label for="switch-2">DarkMode</label>
+                </div>
+            </div>
+        </nav>
         <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
-        <div class="sidebar"></div>
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <a href="#" class="sidebar-link sidebar-link-with-icon">
+                    <span class="sidebar-icon bg-transparent justify-content-start mr-0">
+                        <i class="fa fa-calculator" aria-hidden="true"></i>
+                    </span>
+                    Calculator
+                </a>
+            </div>
+        </div>
         <div class="content-wrapper">
-          <div class="content">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
-            <div class="mt-20">
-              Toggles:
-              <button class="btn btn-sm" type="button" onclick="halfmoon.toggleDarkMode()">Dark mode</button>
-              <button class="btn btn-sm" type="button" onclick="halfmoon.toggleSidebar()">Sidebar</button>
-            </div>
-          </div>
       </div>
       <nav class="navbar navbar-fixed-bottom"></nav>
     </div>
-    <?= $this->Html->script(['halfmoon.min']) ?>
+    <?= $this->Html->script(['halfmoon.min', 'all']) ?>
 </body>
 </html>

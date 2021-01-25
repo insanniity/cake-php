@@ -5,10 +5,13 @@
  */
 ?>
 <div class="users index content">
-    <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Users') ?></h3>
-    <div class="table-responsive">
-        <table>
+    <?= $this->Html->link(__('Adicionar'), ['action' => 'add'], ['class' => 'btn btn-primary float-right']) ?>
+    <h2 class="content-title">
+        <?= __('Users') ?>
+    </h2>
+
+    <div class="card">
+        <table class="table table-no-outer-padding table-hover table-responsive">
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
@@ -36,15 +39,20 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+
+        <div class="paginator">
+            <ul class="pagination">
+                <?= $this->Paginator->first('<< ' . __('first')) ?>
+                <?= $this->Paginator->prev('< ' . __('previous')) ?>
+                <?= $this->Paginator->numbers() ?>
+                <?= $this->Paginator->next(__('next') . ' >') ?>
+                <?= $this->Paginator->last(__('last') . ' >>') ?>
+            </ul>
+            <p><?= $this->Paginator->counter(__('Página {{page}} de {{pages}}, vendo {{current}} registros de {{count}} total')) ?></p>
+        </div>
+
     </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Página {{page}} de {{pages}}, vendo {{current}} registros de {{count}} total')) ?></p>
-    </div>
+
+
+
 </div>
