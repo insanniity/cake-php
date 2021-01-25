@@ -55,11 +55,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
         <div class="sidebar">
             <div class="sidebar-menu">
-                <a href="#" class="sidebar-link sidebar-link-with-icon">
+                <a href="<?= $this->Url->build(['controller' => 'users',  "action" => "index"], ['fullBase' => true]); ?>" class="sidebar-link sidebar-link-with-icon">
                     <span class="sidebar-icon bg-transparent justify-content-start mr-0">
-                        <i class="fa fa-calculator" aria-hidden="true"></i>
+                        <i class="fa fa-user" aria-hidden="true"></i>
                     </span>
-                    Calculator
+                    Usuários
                 </a>
             </div>
         </div>
