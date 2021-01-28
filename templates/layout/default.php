@@ -13,8 +13,8 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  * @var \App\View\AppView $this
  */
-
 $cakeDescription = 'CakePHP: the rapid development php framework';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,36 +38,16 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-preferred-theme-onload="true">
     <div class="page-wrapper with-navbar with-sidebar with-navbar-fixed-bottom" data-sidebar-type="overlayed-sm-and-down">
         <div class="sticky-alerts"></div>
-        <nav class="navbar">
-            <div class="navbar-content">
-                <button class="btn btn-action" type="button" onclick="halfmoon.toggleSidebar()">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                    <span class="sr-only">Menu</span>
-                </button>
-            </div>
-            <div class="navbar-nav ml-auto">
-                <div class="custom-switch">
-                    <input type="checkbox" id="switch-2" onclick="halfmoon.toggleDarkMode()"  checked>
-                    <label for="switch-2">DarkMode</label>
-                </div>
-            </div>
-        </nav>
-        <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
-        <div class="sidebar">
-            <div class="sidebar-menu">
-                <a href="<?= $this->Url->build(['controller' => 'users',  "action" => "index"], ['fullBase' => true]); ?>" class="sidebar-link sidebar-link-with-icon">
-                    <span class="sidebar-icon bg-transparent justify-content-start mr-0">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                    </span>
-                    Usuários
-                </a>
-            </div>
-        </div>
+
+        <?= $this->element('top-navbar') ?>
+        <?= $this->element('side-navbar') ?>
+
         <div class="content-wrapper">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
-      </div>
-      <nav class="navbar navbar-fixed-bottom"></nav>
+        </div>
+
+        <?= $this->element('botton-navbar') ?>
     </div>
     <?= $this->Html->script(['halfmoon.min', 'all']) ?>
 </body>
