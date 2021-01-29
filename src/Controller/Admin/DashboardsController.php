@@ -8,6 +8,8 @@ use App\Controller\AppController;
 class DashboardsController extends AppController
 {
 
+    private $sysTitle = " | Sistema";
+
     public function initialize():void
     {
         parent::initialize();
@@ -22,6 +24,6 @@ class DashboardsController extends AppController
 
     public function index()
     {
-        //$this->autoRender = false;
+       $this->set('title', 'Dashboard'. $this->sysTitle);
     }
 }

@@ -13,6 +13,8 @@ use App\Controller\AppController;
 class UsersController extends AppController
 {
 
+    private $sysTitle = " | Sistema";
+
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
@@ -37,6 +39,7 @@ class UsersController extends AppController
     public function login()
     {
         $this->viewBuilder()->setLayout('login');
+        $this->set('title', 'Login'. $this->sysTitle);
         $result = $this->Authentication->getResult();
 
         if ($result->isValid()) {
