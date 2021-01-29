@@ -5,10 +5,17 @@
  */
 ?>
 <div class="users index content">
-    <?= $this->Html->link(__('Adicionar'), ['action' => 'add'], ['class' => 'btn btn-primary float-right']) ?>
-    <h2 class="content-title">
-        <?= __('Users') ?>
-    </h2>
+    <div class="row">
+        <div class="col-6">
+            <h2 class="content-title">
+                <?= __('Users') ?>
+            </h2>
+        </div>
+        <div class="col-6 text-right">
+            <?= $this->Html->link('<i class="fas fa-plus"></i>', ['action' => 'add'], ['class' => 'btn  btn-sm btn-success', 'escape' => false]) ?>
+        </div>
+    </div>
+
 
     <div class="card">
         <table id="user-table" class="table table-no-outer-padding table-hover table-responsive">
@@ -40,7 +47,4 @@
             </tbody>
         </table>
     </div>
-
-
-
 </div>

@@ -4,30 +4,29 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $user->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+
+<div class="users form content">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="content-title">
+                <?= __('Edit User') ?>
+            </h2>
         </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="users form content">
-            <?= $this->Form->create($user) ?>
-            <fieldset>
-                <legend><?= __('Edit User') ?></legend>
-                <?php
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('password');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+        <div class="col-6 text-right">
+            <?= $this->Form->postLink('<i class="fas fa-trash-alt"></i>', ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'btn btn-sm btn-danger', 'escape' => false]) ?>
+            <?= $this->Html->link('<i class="fas fa-align-justify"></i>', ['action' => 'index'], ['class' => 'btn  btn-sm', 'escape' => false]) ?>
+            <?= $this->Html->link('<i class="fas fa-plus"></i>', ['action' => 'add'], ['class' => 'btn  btn-sm btn-success', 'escape' => false]) ?>
         </div>
     </div>
+
+    <div class="card">
+        <?= $this->Form->create($user) ?>
+            <?php
+                echo $this->Form->control('email',['class' => 'form-control mb-20']);
+                echo $this->Form->control('password',['class' => 'form-control mb-20']);
+            ?>
+            <?= $this->Form->button(__('Save'), ['class' => 'btn btn-success']) ?>
+        <?= $this->Form->end() ?>
+    </div>
 </div>
+
