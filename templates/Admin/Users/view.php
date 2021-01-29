@@ -23,6 +23,10 @@
     <div class="card">
         <table class="table table-no-outer-padding table-hover table-responsive">
             <tr>
+                <th><?= __('Usuario') ?></th>
+                <td><?= h($user->username) ?></td>
+            </tr>
+            <tr>
                 <th><?= __('Email') ?></th>
                 <td><?= h($user->email) ?></td>
             </tr>

@@ -19,6 +19,7 @@
     <div class="card">
         <?= $this->Form->create($user) ?>
             <?php
+                 echo $this->Form->control('username',['class' => 'form-control mb-20']);
                 echo $this->Form->control('email',['class' => 'form-control mb-20']);
                 echo $this->Form->control('password',['class' => 'form-control mb-20']);
             ?>
