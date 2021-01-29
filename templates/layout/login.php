@@ -18,10 +18,11 @@
     <?= $this->fetch('script') ?>
 </head>
     <body class="text-center" data-set-preferred-theme-onload="true">
-        <div class="sticky-alerts"></div>
+        <?= $this->Flash->render() ?>
         <div class="content-wrapper">
-            <?= $this->Flash->render() ?>
+
             <?= $this->fetch('content') ?>
+
         </div>
     <?= $this->Html->script(['halfmoon.min', 'all']) ?>
 </body>

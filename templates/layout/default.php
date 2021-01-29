@@ -19,7 +19,6 @@
 </head>
     <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-preferred-theme-onload="true">
     <div class="page-wrapper with-navbar with-sidebar with-navbar-fixed-bottom" data-sidebar-type="overlayed-sm-and-down">
-        <div class="sticky-alerts"></div>
 
         <?= $this->element('top-navbar') ?>
         <?= $this->element('side-navbar') ?>
