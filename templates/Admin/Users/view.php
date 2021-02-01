@@ -23,6 +23,14 @@
     <div class="card">
         <table class="table table-no-outer-padding table-hover table-responsive">
             <tr>
+                <th><?= __('Id') ?></th>
+                <td><?= $this->Number->format($user->id) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('Nome') ?></th>
+                <td><?= h($user->name) ?></td>
+            </tr>
+            <tr>
                 <th><?= __('Usuario') ?></th>
                 <td><?= h($user->username) ?></td>
             </tr>
@@ -31,12 +39,8 @@
                 <td><?= h($user->email) ?></td>
             </tr>
             <tr>
-                <th><?= __('Password') ?></th>
-                <td>****</td>
-            </tr>
-            <tr>
-                <th><?= __('Id') ?></th>
-                <td><?= $this->Number->format($user->id) ?></td>
+                <th><?= __('Status') ?></th>
+                <td><?= h($user->status) ?></td>
             </tr>
             <tr>
                 <th><?= __('Created') ?></th>

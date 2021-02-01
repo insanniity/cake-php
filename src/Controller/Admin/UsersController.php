@@ -20,7 +20,7 @@ class UsersController extends AppController
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
         // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['login']);
+        $this->Authentication->addUnauthenticatedActions(['login',]);
 
     }
 
@@ -47,6 +47,9 @@ class UsersController extends AppController
             return $this->redirect($target);
         }
         if ($this->request->is('post') && !$result->isValid()) {
+
+            //$this->autoRender = false;
+            //print_r($result);
             $this->Flash->error('Usuário ou senha inválidos.');
         }
     }

@@ -59,6 +59,14 @@ class UsersTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
+            ->integer('status')
+            ->notEmptyString('status');
+
+        $validator
+            ->requirePresence('name', 'create')
+            ->notEmptyString('name');
+
+        $validator
             ->requirePresence('username', 'create')
             ->notEmptyString('username');
 

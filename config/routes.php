@@ -33,6 +33,8 @@ $routes->setRouteClass(DashedRoute::class);
 
 $routes->prefix('admin', function (RouteBuilder $route) {
     $route->connect('/', ['controller' => 'Users', 'action' => 'login']);
+    $route->connect('/login', ['controller' => 'Users', 'action' => 'login']);
+
 
     //users
     $route->connect('/list-users', ['controller' => 'Users', 'action' => 'index']);
